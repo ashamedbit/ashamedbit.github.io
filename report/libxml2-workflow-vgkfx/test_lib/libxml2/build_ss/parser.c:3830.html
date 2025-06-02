@@ -1,0 +1,861 @@
+<html><head>
+        <style type="text/css">
+            
+p {
+    color: #211c1c;
+}
+.traceback-container {
+    border: 1px solid #038BB8;
+}
+.traceback-title {
+    background-color: #038BB8;
+    color: lemonchiffon;
+    padding: 12px;
+    font-size: 20px;
+    margin-top: 0px;
+}
+.frame-line {
+    padding-left: 10px;
+    font-family: monospace;
+}
+.frame-filename {
+    font-family: monospace;
+}
+.center-line {
+    background-color: #038BB8;
+    color: #f9f6e1;
+    padding: 5px 0px 5px 5px;
+}
+.lineno {
+    margin-right: 5px;
+}
+.frame-title {
+    font-weight: unset;
+    padding: 10px 10px 10px 10px;
+    background-color: #E4F4FD;
+    margin-right: 10px;
+    color: #191f21;
+    font-size: 17px;
+    border: 1px solid #c7dce8;
+}
+.collapse-btn {
+    float: right;
+    padding: 0px 5px 1px 5px;
+    border: solid 1px #96aebb;
+    cursor: pointer;
+}
+.collapsed {
+  display: none;
+}
+.source-code {
+  font-family: courier;
+  font-size: small;
+  padding-bottom: 10px;
+}
+
+        </style>
+        <title>Starlette Debugger</title>
+    </head>
+    <body>
+        <h1>500 Server Error</h1>
+        <h2>IndexError: list index out of range</h2>
+        <div class="traceback-container">
+            <p class="traceback-title">Traceback</p>
+            <div>
+<div>
+    <p class="frame-title">File <span class="frame-filename">/home/fsc/venv/lib/python3.12/site-packages/fsc/routes/general_routes.py</span>,
+    line <i>184</i>,
+    in <b>get_report</b>
+    <span class="collapse-btn" data-frame-id="/home/fsc/venv/lib/python3.12/site-packages/fsc/routes/general_routes.py-184" onclick="collapse(this)">‒</span>
+    </p>
+    <div id="/home/fsc/venv/lib/python3.12/site-packages/fsc/routes/general_routes.py-184" class="source-code ">
+<p><span class="frame-line">
+<span class="lineno">181.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_highlight_lines&nbsp;=&nbsp;[]
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">182.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;i&nbsp;in&nbsp;coverage:
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">183.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;times_run&nbsp;=&nbsp;int(
+</span></p>
+
+<p class="center-line"><span class="frame-line center-line">
+<span class="lineno">184.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"".join(filter(str.isdigit,&nbsp;i.split("|")[1].replace("&nbsp;",&nbsp;"")))&nbsp;or&nbsp;"0"
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">185.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">186.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line_num&nbsp;=&nbsp;i.split("|")[0].replace("&nbsp;",&nbsp;"")
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">187.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;times_run&nbsp;&gt;&nbsp;0:
+</span></p>
+</div>
+</div>
+
+<div>
+    <p class="frame-title">File <span class="frame-filename">/home/fsc/venv/lib/python3.12/site-packages/fastapi/routing.py</span>,
+    line <i>191</i>,
+    in <b>run_endpoint_function</b>
+    <span class="collapse-btn" data-frame-id="/home/fsc/venv/lib/python3.12/site-packages/fastapi/routing.py-191" onclick="collapse(this)">+</span>
+    </p>
+    <div id="/home/fsc/venv/lib/python3.12/site-packages/fastapi/routing.py-191" class="source-code collapsed">
+<p><span class="frame-line">
+<span class="lineno">188.</span> &nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;dependant.call&nbsp;is&nbsp;not&nbsp;None,&nbsp;"dependant.call&nbsp;must&nbsp;be&nbsp;a&nbsp;function"
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">189.</span> 
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">190.</span> &nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;is_coroutine:
+</span></p>
+
+<p class="center-line"><span class="frame-line center-line">
+<span class="lineno">191.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;await&nbsp;dependant.call(**values)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">192.</span> &nbsp;&nbsp;&nbsp;&nbsp;else:
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">193.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;await&nbsp;run_in_threadpool(dependant.call,&nbsp;**values)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">194.</span> 
+</span></p>
+</div>
+</div>
+
+<div>
+    <p class="frame-title">File <span class="frame-filename">/home/fsc/venv/lib/python3.12/site-packages/fastapi/routing.py</span>,
+    line <i>278</i>,
+    in <b>app</b>
+    <span class="collapse-btn" data-frame-id="/home/fsc/venv/lib/python3.12/site-packages/fastapi/routing.py-278" onclick="collapse(this)">+</span>
+    </p>
+    <div id="/home/fsc/venv/lib/python3.12/site-packages/fastapi/routing.py-278" class="source-code collapsed">
+<p><span class="frame-line">
+<span class="lineno">275.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">276.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;values,&nbsp;errors,&nbsp;background_tasks,&nbsp;sub_response,&nbsp;_&nbsp;=&nbsp;solved_result
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">277.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;not&nbsp;errors:
+</span></p>
+
+<p class="center-line"><span class="frame-line center-line">
+<span class="lineno">278.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raw_response&nbsp;=&nbsp;await&nbsp;run_endpoint_function(
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">279.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dependant=dependant,&nbsp;values=values,&nbsp;is_coroutine=is_coroutine
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">280.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">281.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;isinstance(raw_response,&nbsp;Response):
+</span></p>
+</div>
+</div>
+
+<div>
+    <p class="frame-title">File <span class="frame-filename">/home/fsc/venv/lib/python3.12/site-packages/starlette/routing.py</span>,
+    line <i>72</i>,
+    in <b>app</b>
+    <span class="collapse-btn" data-frame-id="/home/fsc/venv/lib/python3.12/site-packages/starlette/routing.py-72" onclick="collapse(this)">+</span>
+    </p>
+    <div id="/home/fsc/venv/lib/python3.12/site-packages/starlette/routing.py-72" class="source-code collapsed">
+<p><span class="frame-line">
+<span class="lineno">69.</span> 
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">70.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;def&nbsp;app(scope:&nbsp;Scope,&nbsp;receive:&nbsp;Receive,&nbsp;send:&nbsp;Send)&nbsp;-&gt;&nbsp;None:
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">71.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;is_async_callable(func):
+</span></p>
+
+<p class="center-line"><span class="frame-line center-line">
+<span class="lineno">72.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response&nbsp;=&nbsp;await&nbsp;func(request)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">73.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">74.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response&nbsp;=&nbsp;await&nbsp;run_in_threadpool(func,&nbsp;request)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">75.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;response(scope,&nbsp;receive,&nbsp;send)
+</span></p>
+</div>
+</div>
+
+<div>
+    <p class="frame-title">File <span class="frame-filename">/home/fsc/venv/lib/python3.12/site-packages/starlette/_exception_handler.py</span>,
+    line <i>53</i>,
+    in <b>wrapped_app</b>
+    <span class="collapse-btn" data-frame-id="/home/fsc/venv/lib/python3.12/site-packages/starlette/_exception_handler.py-53" onclick="collapse(this)">+</span>
+    </p>
+    <div id="/home/fsc/venv/lib/python3.12/site-packages/starlette/_exception_handler.py-53" class="source-code collapsed">
+<p><span class="frame-line">
+<span class="lineno">50.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;send(message)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">51.</span> 
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">52.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:
+</span></p>
+
+<p class="center-line"><span class="frame-line center-line">
+<span class="lineno">53.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;app(scope,&nbsp;receive,&nbsp;sender)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">54.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except&nbsp;Exception&nbsp;as&nbsp;exc:
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">55.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;handler&nbsp;=&nbsp;None
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">56.</span> 
+</span></p>
+</div>
+</div>
+
+<div>
+    <p class="frame-title">File <span class="frame-filename">/home/fsc/venv/lib/python3.12/site-packages/starlette/_exception_handler.py</span>,
+    line <i>64</i>,
+    in <b>wrapped_app</b>
+    <span class="collapse-btn" data-frame-id="/home/fsc/venv/lib/python3.12/site-packages/starlette/_exception_handler.py-64" onclick="collapse(this)">+</span>
+    </p>
+    <div id="/home/fsc/venv/lib/python3.12/site-packages/starlette/_exception_handler.py-64" class="source-code collapsed">
+<p><span class="frame-line">
+<span class="lineno">61.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;handler&nbsp;=&nbsp;_lookup_exception_handler(exception_handlers,&nbsp;exc)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">62.</span> 
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">63.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;handler&nbsp;is&nbsp;None:
+</span></p>
+
+<p class="center-line"><span class="frame-line center-line">
+<span class="lineno">64.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;exc
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">65.</span> 
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">66.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;response_started:
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">67.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msg&nbsp;=&nbsp;"Caught&nbsp;handled&nbsp;exception,&nbsp;but&nbsp;response&nbsp;already&nbsp;started."
+</span></p>
+</div>
+</div>
+
+<div>
+    <p class="frame-title">File <span class="frame-filename">/home/fsc/venv/lib/python3.12/site-packages/starlette/routing.py</span>,
+    line <i>77</i>,
+    in <b>app</b>
+    <span class="collapse-btn" data-frame-id="/home/fsc/venv/lib/python3.12/site-packages/starlette/routing.py-77" onclick="collapse(this)">+</span>
+    </p>
+    <div id="/home/fsc/venv/lib/python3.12/site-packages/starlette/routing.py-77" class="source-code collapsed">
+<p><span class="frame-line">
+<span class="lineno">74.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response&nbsp;=&nbsp;await&nbsp;run_in_threadpool(func,&nbsp;request)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">75.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;response(scope,&nbsp;receive,&nbsp;send)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">76.</span> 
+</span></p>
+
+<p class="center-line"><span class="frame-line center-line">
+<span class="lineno">77.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;wrap_app_handling_exceptions(app,&nbsp;request)(scope,&nbsp;receive,&nbsp;send)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">78.</span> 
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">79.</span> &nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;app
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">80.</span> 
+</span></p>
+</div>
+</div>
+
+<div>
+    <p class="frame-title">File <span class="frame-filename">/home/fsc/venv/lib/python3.12/site-packages/starlette/routing.py</span>,
+    line <i>297</i>,
+    in <b>handle</b>
+    <span class="collapse-btn" data-frame-id="/home/fsc/venv/lib/python3.12/site-packages/starlette/routing.py-297" onclick="collapse(this)">+</span>
+    </p>
+    <div id="/home/fsc/venv/lib/python3.12/site-packages/starlette/routing.py-297" class="source-code collapsed">
+<p><span class="frame-line">
+<span class="lineno">294.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">295.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;response(scope,&nbsp;receive,&nbsp;send)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">296.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:
+</span></p>
+
+<p class="center-line"><span class="frame-line center-line">
+<span class="lineno">297.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;self.app(scope,&nbsp;receive,&nbsp;send)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">298.</span> 
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">299.</span> &nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__eq__(self,&nbsp;other:&nbsp;typing.Any)&nbsp;-&gt;&nbsp;bool:
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">300.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;(
+</span></p>
+</div>
+</div>
+
+<div>
+    <p class="frame-title">File <span class="frame-filename">/home/fsc/venv/lib/python3.12/site-packages/starlette/routing.py</span>,
+    line <i>776</i>,
+    in <b>app</b>
+    <span class="collapse-btn" data-frame-id="/home/fsc/venv/lib/python3.12/site-packages/starlette/routing.py-776" onclick="collapse(this)">+</span>
+    </p>
+    <div id="/home/fsc/venv/lib/python3.12/site-packages/starlette/routing.py-776" class="source-code collapsed">
+<p><span class="frame-line">
+<span class="lineno">773.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;match,&nbsp;child_scope&nbsp;=&nbsp;route.matches(scope)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">774.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;match&nbsp;==&nbsp;Match.FULL:
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">775.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scope.update(child_scope)
+</span></p>
+
+<p class="center-line"><span class="frame-line center-line">
+<span class="lineno">776.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;route.handle(scope,&nbsp;receive,&nbsp;send)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">777.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">778.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;match&nbsp;==&nbsp;Match.PARTIAL&nbsp;and&nbsp;partial&nbsp;is&nbsp;None:
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">779.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;partial&nbsp;=&nbsp;route
+</span></p>
+</div>
+</div>
+
+<div>
+    <p class="frame-title">File <span class="frame-filename">/home/fsc/venv/lib/python3.12/site-packages/starlette/routing.py</span>,
+    line <i>756</i>,
+    in <b>__call__</b>
+    <span class="collapse-btn" data-frame-id="/home/fsc/venv/lib/python3.12/site-packages/starlette/routing.py-756" onclick="collapse(this)">+</span>
+    </p>
+    <div id="/home/fsc/venv/lib/python3.12/site-packages/starlette/routing.py-756" class="source-code collapsed">
+<p><span class="frame-line">
+<span class="lineno">753.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">754.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;main&nbsp;entry&nbsp;point&nbsp;to&nbsp;the&nbsp;Router&nbsp;class.
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">755.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""
+</span></p>
+
+<p class="center-line"><span class="frame-line center-line">
+<span class="lineno">756.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;self.middleware_stack(scope,&nbsp;receive,&nbsp;send)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">757.</span> 
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">758.</span> &nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;def&nbsp;app(self,&nbsp;scope:&nbsp;Scope,&nbsp;receive:&nbsp;Receive,&nbsp;send:&nbsp;Send)&nbsp;-&gt;&nbsp;None:
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">759.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;scope["type"]&nbsp;in&nbsp;("http",&nbsp;"websocket",&nbsp;"lifespan")
+</span></p>
+</div>
+</div>
+
+<div>
+    <p class="frame-title">File <span class="frame-filename">/home/fsc/venv/lib/python3.12/site-packages/starlette/_exception_handler.py</span>,
+    line <i>53</i>,
+    in <b>wrapped_app</b>
+    <span class="collapse-btn" data-frame-id="/home/fsc/venv/lib/python3.12/site-packages/starlette/_exception_handler.py-53" onclick="collapse(this)">+</span>
+    </p>
+    <div id="/home/fsc/venv/lib/python3.12/site-packages/starlette/_exception_handler.py-53" class="source-code collapsed">
+<p><span class="frame-line">
+<span class="lineno">50.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;send(message)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">51.</span> 
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">52.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:
+</span></p>
+
+<p class="center-line"><span class="frame-line center-line">
+<span class="lineno">53.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;app(scope,&nbsp;receive,&nbsp;sender)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">54.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except&nbsp;Exception&nbsp;as&nbsp;exc:
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">55.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;handler&nbsp;=&nbsp;None
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">56.</span> 
+</span></p>
+</div>
+</div>
+
+<div>
+    <p class="frame-title">File <span class="frame-filename">/home/fsc/venv/lib/python3.12/site-packages/starlette/_exception_handler.py</span>,
+    line <i>64</i>,
+    in <b>wrapped_app</b>
+    <span class="collapse-btn" data-frame-id="/home/fsc/venv/lib/python3.12/site-packages/starlette/_exception_handler.py-64" onclick="collapse(this)">+</span>
+    </p>
+    <div id="/home/fsc/venv/lib/python3.12/site-packages/starlette/_exception_handler.py-64" class="source-code collapsed">
+<p><span class="frame-line">
+<span class="lineno">61.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;handler&nbsp;=&nbsp;_lookup_exception_handler(exception_handlers,&nbsp;exc)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">62.</span> 
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">63.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;handler&nbsp;is&nbsp;None:
+</span></p>
+
+<p class="center-line"><span class="frame-line center-line">
+<span class="lineno">64.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;exc
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">65.</span> 
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">66.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;response_started:
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">67.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msg&nbsp;=&nbsp;"Caught&nbsp;handled&nbsp;exception,&nbsp;but&nbsp;response&nbsp;already&nbsp;started."
+</span></p>
+</div>
+</div>
+
+<div>
+    <p class="frame-title">File <span class="frame-filename">/home/fsc/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py</span>,
+    line <i>65</i>,
+    in <b>__call__</b>
+    <span class="collapse-btn" data-frame-id="/home/fsc/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py-65" onclick="collapse(this)">+</span>
+    </p>
+    <div id="/home/fsc/venv/lib/python3.12/site-packages/starlette/middleware/exceptions.py-65" class="source-code collapsed">
+<p><span class="frame-line">
+<span class="lineno">62.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">63.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;conn&nbsp;=&nbsp;WebSocket(scope,&nbsp;receive,&nbsp;send)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">64.</span> 
+</span></p>
+
+<p class="center-line"><span class="frame-line center-line">
+<span class="lineno">65.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;wrap_app_handling_exceptions(self.app,&nbsp;conn)(scope,&nbsp;receive,&nbsp;send)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">66.</span> 
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">67.</span> &nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;http_exception(self,&nbsp;request:&nbsp;Request,&nbsp;exc:&nbsp;Exception)&nbsp;-&gt;&nbsp;Response:
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">68.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;isinstance(exc,&nbsp;HTTPException)
+</span></p>
+</div>
+</div>
+
+<div>
+    <p class="frame-title">File <span class="frame-filename">/home/fsc/venv/lib/python3.12/site-packages/starlette/middleware/base.py</span>,
+    line <i>151</i>,
+    in <b>coro</b>
+    <span class="collapse-btn" data-frame-id="/home/fsc/venv/lib/python3.12/site-packages/starlette/middleware/base.py-151" onclick="collapse(this)">+</span>
+    </p>
+    <div id="/home/fsc/venv/lib/python3.12/site-packages/starlette/middleware/base.py-151" class="source-code collapsed">
+<p><span class="frame-line">
+<span class="lineno">148.</span> 
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">149.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;with&nbsp;send_stream:
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">150.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:
+</span></p>
+
+<p class="center-line"><span class="frame-line center-line">
+<span class="lineno">151.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;self.app(scope,&nbsp;receive_or_disconnect,&nbsp;send_no_error)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">152.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except&nbsp;Exception&nbsp;as&nbsp;exc:
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">153.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;app_exc&nbsp;=&nbsp;exc
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">154.</span> 
+</span></p>
+</div>
+</div>
+
+<div>
+    <p class="frame-title">File <span class="frame-filename">/home/fsc/venv/lib/python3.12/site-packages/starlette/middleware/base.py</span>,
+    line <i>165</i>,
+    in <b>call_next</b>
+    <span class="collapse-btn" data-frame-id="/home/fsc/venv/lib/python3.12/site-packages/starlette/middleware/base.py-165" onclick="collapse(this)">+</span>
+    </p>
+    <div id="/home/fsc/venv/lib/python3.12/site-packages/starlette/middleware/base.py-165" class="source-code collapsed">
+<p><span class="frame-line">
+<span class="lineno">162.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;message&nbsp;=&nbsp;await&nbsp;recv_stream.receive()
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">163.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except&nbsp;anyio.EndOfStream:
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">164.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;app_exc&nbsp;is&nbsp;not&nbsp;None:
+</span></p>
+
+<p class="center-line"><span class="frame-line center-line">
+<span class="lineno">165.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;app_exc
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">166.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;RuntimeError("No&nbsp;response&nbsp;returned.")
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">167.</span> 
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">168.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert&nbsp;message["type"]&nbsp;==&nbsp;"http.response.start"
+</span></p>
+</div>
+</div>
+
+<div>
+    <p class="frame-title">File <span class="frame-filename">/home/fsc/venv/lib/python3.12/site-packages/fsc/server.py</span>,
+    line <i>83</i>,
+    in <b>add_process_time_header</b>
+    <span class="collapse-btn" data-frame-id="/home/fsc/venv/lib/python3.12/site-packages/fsc/server.py-83" onclick="collapse(this)">+</span>
+    </p>
+    <div id="/home/fsc/venv/lib/python3.12/site-packages/fsc/server.py-83" class="source-code collapsed">
+<p><span class="frame-line">
+<span class="lineno">80.</span> &nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;if&nbsp;not&nbsp;any(path&nbsp;in&nbsp;request.url.path&nbsp;for&nbsp;path&nbsp;in&nbsp;_ignore_setup):
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">81.</span> &nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setup_integrations()
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">82.</span> &nbsp;&nbsp;&nbsp;&nbsp;logger.info(f"Request:&nbsp;{request.method}&nbsp;{request.url.path}")
+</span></p>
+
+<p class="center-line"><span class="frame-line center-line">
+<span class="lineno">83.</span> &nbsp;&nbsp;&nbsp;&nbsp;response&nbsp;=&nbsp;await&nbsp;call_next(request)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">84.</span> &nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;response
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">85.</span> 
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">86.</span> 
+</span></p>
+</div>
+</div>
+
+<div>
+    <p class="frame-title">File <span class="frame-filename">/home/fsc/venv/lib/python3.12/site-packages/starlette/middleware/base.py</span>,
+    line <i>191</i>,
+    in <b>__call__</b>
+    <span class="collapse-btn" data-frame-id="/home/fsc/venv/lib/python3.12/site-packages/starlette/middleware/base.py-191" onclick="collapse(this)">+</span>
+    </p>
+    <div id="/home/fsc/venv/lib/python3.12/site-packages/starlette/middleware/base.py-191" class="source-code collapsed">
+<p><span class="frame-line">
+<span class="lineno">188.</span> 
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">189.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with&nbsp;collapse_excgroups():
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">190.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;with&nbsp;anyio.create_task_group()&nbsp;as&nbsp;task_group:
+</span></p>
+
+<p class="center-line"><span class="frame-line center-line">
+<span class="lineno">191.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response&nbsp;=&nbsp;await&nbsp;self.dispatch_func(request,&nbsp;call_next)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">192.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;response(scope,&nbsp;wrapped_receive,&nbsp;send)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">193.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response_sent.set()
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">194.</span> 
+</span></p>
+</div>
+</div>
+
+<div>
+    <p class="frame-title">File <span class="frame-filename">/home/fsc/venv/lib/python3.12/site-packages/starlette/_utils.py</span>,
+    line <i>93</i>,
+    in <b>collapse_excgroups</b>
+    <span class="collapse-btn" data-frame-id="/home/fsc/venv/lib/python3.12/site-packages/starlette/_utils.py-93" onclick="collapse(this)">+</span>
+    </p>
+    <div id="/home/fsc/venv/lib/python3.12/site-packages/starlette/_utils.py-93" class="source-code collapsed">
+<p><span class="frame-line">
+<span class="lineno">90.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;isinstance(exc,&nbsp;BaseExceptionGroup)&nbsp;and&nbsp;len(exc.exceptions)&nbsp;==&nbsp;1:
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">91.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exc&nbsp;=&nbsp;exc.exceptions[0]&nbsp;&nbsp;#&nbsp;pragma:&nbsp;no&nbsp;cover
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">92.</span> 
+</span></p>
+
+<p class="center-line"><span class="frame-line center-line">
+<span class="lineno">93.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise&nbsp;exc
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">94.</span> 
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">95.</span> 
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">96.</span> def&nbsp;get_route_path(scope:&nbsp;Scope)&nbsp;-&gt;&nbsp;str:
+</span></p>
+</div>
+</div>
+
+<div>
+    <p class="frame-title">File <span class="frame-filename">/usr/local/lib/python3.12/contextlib.py</span>,
+    line <i>158</i>,
+    in <b>__exit__</b>
+    <span class="collapse-btn" data-frame-id="/usr/local/lib/python3.12/contextlib.py-158" onclick="collapse(this)">+</span>
+    </p>
+    <div id="/usr/local/lib/python3.12/contextlib.py-158" class="source-code collapsed">
+<p><span class="frame-line">
+<span class="lineno">155.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;tell&nbsp;if&nbsp;we&nbsp;get&nbsp;the&nbsp;same&nbsp;exception&nbsp;back
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">156.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;=&nbsp;typ()
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">157.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:
+</span></p>
+
+<p class="center-line"><span class="frame-line center-line">
+<span class="lineno">158.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.gen.throw(value)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">159.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except&nbsp;StopIteration&nbsp;as&nbsp;exc:
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">160.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Suppress&nbsp;StopIteration&nbsp;*unless*&nbsp;it's&nbsp;the&nbsp;same&nbsp;exception&nbsp;that
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">161.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;was&nbsp;passed&nbsp;to&nbsp;throw().&nbsp;&nbsp;This&nbsp;prevents&nbsp;a&nbsp;StopIteration
+</span></p>
+</div>
+</div>
+
+<div>
+    <p class="frame-title">File <span class="frame-filename">/home/fsc/venv/lib/python3.12/site-packages/starlette/middleware/base.py</span>,
+    line <i>189</i>,
+    in <b>__call__</b>
+    <span class="collapse-btn" data-frame-id="/home/fsc/venv/lib/python3.12/site-packages/starlette/middleware/base.py-189" onclick="collapse(this)">+</span>
+    </p>
+    <div id="/home/fsc/venv/lib/python3.12/site-packages/starlette/middleware/base.py-189" class="source-code collapsed">
+<p><span class="frame-line">
+<span class="lineno">186.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response.raw_headers&nbsp;=&nbsp;message["headers"]
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">187.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;response
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">188.</span> 
+</span></p>
+
+<p class="center-line"><span class="frame-line center-line">
+<span class="lineno">189.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with&nbsp;collapse_excgroups():
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">190.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;async&nbsp;with&nbsp;anyio.create_task_group()&nbsp;as&nbsp;task_group:
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">191.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response&nbsp;=&nbsp;await&nbsp;self.dispatch_func(request,&nbsp;call_next)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">192.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;response(scope,&nbsp;wrapped_receive,&nbsp;send)
+</span></p>
+</div>
+</div>
+
+<div>
+    <p class="frame-title">File <span class="frame-filename">/home/fsc/venv/lib/python3.12/site-packages/starlette/middleware/errors.py</span>,
+    line <i>164</i>,
+    in <b>__call__</b>
+    <span class="collapse-btn" data-frame-id="/home/fsc/venv/lib/python3.12/site-packages/starlette/middleware/errors.py-164" onclick="collapse(this)">+</span>
+    </p>
+    <div id="/home/fsc/venv/lib/python3.12/site-packages/starlette/middleware/errors.py-164" class="source-code collapsed">
+<p><span class="frame-line">
+<span class="lineno">161.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;send(message)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">162.</span> 
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">163.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:
+</span></p>
+
+<p class="center-line"><span class="frame-line center-line">
+<span class="lineno">164.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;self.app(scope,&nbsp;receive,&nbsp;_send)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">165.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except&nbsp;Exception&nbsp;as&nbsp;exc:
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">166.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;request&nbsp;=&nbsp;Request(scope)
+</span></p>
+
+<p><span class="frame-line">
+<span class="lineno">167.</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;self.debug:
+</span></p>
+</div>
+</div>
+</div>
+        </div>
+        
+<script type="text/javascript">
+    function collapse(element){
+        const frameId = element.getAttribute("data-frame-id");
+        const frame = document.getElementById(frameId);
+
+        if (frame.classList.contains("collapsed")){
+            element.innerHTML = "&#8210;";
+            frame.classList.remove("collapsed");
+        } else {
+            element.innerHTML = "+";
+            frame.classList.add("collapsed");
+        }
+    }
+</script>
+
+    
+
+</body></html>
